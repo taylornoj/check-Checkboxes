@@ -61,21 +61,21 @@
 
     // for when holding shift, we need to know which is last checked
     let lastChecked;
-    
+
     function handleCheck(e) {
       let inBetween = false;
       // check if shift key is down and box is being checked...
-      if(e.shiftKey && this.checked) {
+      if (e.shiftKey && this.checked) {
         // loop over each checkbox
         checkboxes.forEach(checkbox => {
           // is input type="checkbox" equal to the one that is checked?
-          if(checkbox === this || checkbox === lastChecked) {
+          if (checkbox === this || checkbox === lastChecked) {
             // finding the first and last checked
             // if its true, its false. if false, its true
             inBetween = !inBetween;
           }
           // if 'inputs' are inbetween as previously discovered, true. check them.
-          if(inBetween) {
+          if (inBetween) {
             checkbox.checked = true;
           }
         });
@@ -84,18 +84,14 @@
       // one it'll be true, which is going to check if its on (line 117) 
       // then programatically set it to checked with JS (line 118)
       // do it for every single element until flag element (line 114) is false
-      
+
       // line 111 allows us to also hold shift and click 'up' because of this/lastChecked
 
       lastChecked = this;
-
     }
-
-
     // listening for if one is clicked or changed
     checkboxes.forEach(checkbox => checkbox.addEventListener(
-      'click', handleCheck)); 
-
+      'click', handleCheck));
 
   </script>
 </body>
