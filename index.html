@@ -95,15 +95,18 @@
   </div>
 
   <script>
+    // select every checkbox so we can listen for when they are checked
     const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
+    // for when holding shift, we need to know which is last checked
     let lastChecked;
-    //
+    
     function handleCheck(e) {
       // check if shift key is down and box is being checked...
       if(e.shiftKey && this.checked) {
         //
         
+
 
       }
       
@@ -113,6 +116,7 @@
     }
 
 
+    // listening for if one is clicked or changed
     checkboxes.forEach(checkbox => checkbox.addEventListener(
       'click', handleCheck)); 
 
